@@ -1,0 +1,23 @@
+name: validate-submissions
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths:
+      - "data/submissions.csv"
+      - "schema.json"
+      - "scripts/validate_submissions.py"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Prove the checker catches what it claims to
+        run: python scripts/validate_submissions.py --self-test
+      - name: Validate the dataset
+        run: python scripts/validate_submissions.py

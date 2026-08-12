@@ -1,0 +1,109 @@
+name: Coil whine report (one unit)
+description: Report one GPU, PSU, or AIO pump you own — including silent ones. No git knowledge needed.
+title: "[report] BRAND MODEL — severity ?"
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **One report = one physical unit you own(ed), judged by your own ears.**
+
+        Silent units matter most: a census that only hears from annoyed owners overstates whine,
+        so a severity-0 report ("mine is silent") is a first-class row, not noise.
+
+        A maintainer reviews every report against [`schema.json`](https://github.com/iBlessi/coil-whine-db/blob/main/schema.json)
+        and the checks in [CONTRIBUTING.md](https://github.com/iBlessi/coil-whine-db/blob/main/CONTRIBUTING.md),
+        then transcribes accepted reports into `data/submissions.csv`. The `submitted_date` field
+        is taken from this issue's creation date.
+  - type: dropdown
+    id: component_type
+    attributes:
+      label: Component type (component_type)
+      options:
+        - gpu
+        - psu
+        - aio-pump
+    validations:
+      required: true
+  - type: input
+    id: brand
+    attributes:
+      label: Brand (brand)
+      placeholder: "e.g. ASUS, Corsair, Arctic"
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model (model)
+      description: Specific enough to group units into a distribution.
+      placeholder: "e.g. ROG Strix RTX 4090, RM850x (2021), Liquid Freezer II 280"
+    validations:
+      required: true
+  - type: input
+    id: exact_sku
+    attributes:
+      label: Exact SKU (exact_sku) — optional
+      placeholder: "e.g. ROG-STRIX-RTX4090-O24G-GAMING"
+  - type: input
+    id: purchase_year
+    attributes:
+      label: Purchase year (purchase_year)
+      description: The year this unit was bought (not the model's release year).
+      placeholder: "e.g. 2025"
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity (severity)
+      description: Score the unit at its loudest normal state, using the anchors.
+      options:
+        - "0 — inaudible in a quiet room"
+        - "1 — audible with an ear at the case"
+        - "2 — audible at the desk under load"
+        - "3 — audible across the room under load"
+        - "4 — audible even at idle"
+    validations:
+      required: true
+  - type: dropdown
+    id: load_context
+    attributes:
+      label: Load context (load_context)
+      description: The load state in which you observed that severity.
+      options:
+        - idle
+        - gaming
+        - menu-uncapped-fps
+        - furmark
+    validations:
+      required: true
+  - type: input
+    id: psu_used
+    attributes:
+      label: PSU in the system (psu_used) — optional
+      description: "For GPU reports: whine sometimes moves with the power supply."
+      placeholder: "e.g. Corsair RM1000x"
+  - type: dropdown
+    id: fps_cap_changes_it
+    attributes:
+      label: Does capping FPS change it? (fps_cap_changes_it) — optional
+      description: V-Sync or an FPS limiter — does the whine audibly change when frames are capped?
+      options:
+        - did not test
+        - "true — capping FPS audibly changes it"
+        - "false — tested, no audible change"
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes (notes) — optional, max 280 characters
+      placeholder: What it sounds like, whether it faded over the first weeks, what quieted it.
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: This reports one physical unit I own or owned, judged by my own ears — not a summary of reviews or of other people's forum posts.
+          required: true
+        - label: I agree this report is published in the dataset under CC BY 4.0.
+          required: true

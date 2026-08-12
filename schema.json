@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/iBlessi/coil-whine-db/main/schema.json",
+  "title": "TechFuelHQ Community Coil Whine Census — submission row",
+  "description": "One row = one physical unit the submitter owns (GPU, PSU, or AIO pump), scored on the anchored 0-4 severity scale at its loudest normal state. The dataset publishes per-model DISTRIBUTIONS (n + share of reports at each severity), never per-model verdicts, because coil whine varies unit to unit within the same model. CC BY 4.0.",
+  "type": "object",
+  "csv_column_order": [
+    "component_type",
+    "brand",
+    "model",
+    "exact_sku",
+    "purchase_year",
+    "severity",
+    "load_context",
+    "psu_used",
+    "fps_cap_changes_it",
+    "notes",
+    "submitted_date"
+  ],
+  "required": [
+    "component_type",
+    "brand",
+    "model",
+    "purchase_year",
+    "severity",
+    "load_context",
+    "submitted_date"
+  ],
+  "properties": {
+    "component_type": {
+      "type": "string",
+      "enum": ["gpu", "psu", "aio-pump"],
+      "description": "The component the report is about."
+    },
+    "brand": {
+      "type": "string",
+      "minLength": 2,
+      "description": "Brand as printed on the box, e.g. 'ASUS', 'Corsair', 'Arctic'."
+    },
+    "model": {
+      "type": "string",
+      "minLength": 2,
+      "description": "Model line, specific enough to group units for a distribution, e.g. 'ROG Strix RTX 4090', 'RM850x (2021)', 'Liquid Freezer II 280'."
+    },
+    "exact_sku": {
+      "type": "string",
+      "description": "OPTIONAL. Exact manufacturer SKU when known, e.g. 'ROG-STRIX-RTX4090-O24G-GAMING'. Empty string when unknown."
+    },
+    "purchase_year": {
+      "type": "integer",
+      "minimum": 2000,
+      "description": "Year the unit was purchased. Must not be in the future; the validator enforces <= the current year."
+    },
+    "severity": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4,
+      "description": "Anchored severity at the unit's loudest normal state: 0 = inaudible in a quiet room; 1 = audible ear-at-case; 2 = audible at desk under load; 3 = audible across room under load; 4 = audible idle."
+    },
+    "load_context": {
+      "type": "string",
+      "enum": ["idle", "gaming", "menu-uncapped-fps", "furmark"],
+      "description": "The load state in which the reported severity was observed (the state that produced the score)."
+    },
+    "psu_used": {
+      "type": "string",
+      "description": "OPTIONAL. For GPU reports: the power supply feeding the system, e.g. 'Corsair RM1000x' — whine sometimes moves with the PSU. Empty string when unknown or not applicable."
+    },
+    "fps_cap_changes_it": {
+      "type": ["boolean", "null"],
+      "description": "OPTIONAL. true if capping the frame rate (V-Sync / FPS limiter) audibly changes the whine; false if tested and it does not; empty when untested. CSV encoding: 'true', 'false', or empty string."
+    },
+    "notes": {
+      "type": "string",
+      "maxLength": 280,
+      "description": "OPTIONAL. Free text, max 280 characters — what it sounds like, whether it faded over the first weeks, what quieted it."
+    },
+    "submitted_date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "ISO date (YYYY-MM-DD) the report was submitted. For issue-form reports the maintainer uses the issue's creation date. Must not be in the future."
+    }
+  },
+  "publication_rules": {
+    "activation_floor": "per-model n + severity distribution once a model has >=5 reports; below that the model is listed as collecting, with no verdict",
+    "self_selection_bias": "Annoyed owners over-report and silent units under-report, so published whine percentages are ceilings, not unbiased estimates.",
+    "license": "https://creativecommons.org/licenses/by/4.0/"
+  }
+}

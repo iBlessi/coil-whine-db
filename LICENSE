@@ -1,0 +1,31 @@
+TechFuelHQ Community Coil Whine Census
+Copyright (c) 2026 Lowell K. Wood IV / TechFuelHQ
+
+This dataset (schema.json, data/submissions.csv, and the accompanying
+documentation in this repository) is licensed under the Creative Commons
+Attribution 4.0 International License (CC BY 4.0).
+
+Full legal text:  https://creativecommons.org/licenses/by/4.0/legalcode
+Human-readable summary:  https://creativecommons.org/licenses/by/4.0/
+
+You are free to:
+
+  Share — copy and redistribute the material in any medium or format
+  Adapt — remix, transform, and build upon the material
+  for any purpose, even commercially.
+
+Under the following terms:
+
+  Attribution — You must give appropriate credit, provide a link to the
+  license, and indicate if changes were made.
+
+Suggested attribution line:
+
+  TechFuelHQ Community Coil Whine Census (CC BY 4.0)
+  https://techfuelhq.com/data/coil-whine-database/
+
+By submitting a report (via issue form or pull request) you agree that your
+submitted row is published under this same CC BY 4.0 license.
+
+The validation script (scripts/validate_submissions.py) is likewise released
+under CC BY 4.0.
