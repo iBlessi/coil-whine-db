@@ -1,1 +1,2 @@
 component_type,brand,model,exact_sku,purchase_year,severity,load_context,psu_used,fps_cap_changes_it,notes,submitted_date
+gpu,ASUS,ROG Astral RTX 5080 OC,,2026,1,menu-uncapped-fps,EVGA SuperNOVA 1000 GT,true,Quiet card overall: silent in gaming and idle. A faint electronic whine appears only in uncapped game menus; any frame cap removes it. Ear at the case panel. Same unit as the TechFuelHQ Astral 5080 bench dataset.,2026-08-13
