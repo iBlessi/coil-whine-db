@@ -12,6 +12,7 @@ Validates every row of data/submissions.csv against schema.json (stdlib only):
   * submitted_date a real ISO date (YYYY-MM-DD), not in the future,
   * impossible combo: severity 0 with fps_cap_changes_it=true
     (an inaudible whine cannot audibly change),
+  * source_issue empty or a positive issue number, and no issue transcribed twice,
   * no exact-duplicate rows.
 
 Exit codes: 0 = every row valid (a header-only file is valid — the census
@@ -75,6 +76,8 @@ def validate(header, rows, schema, today=None):
         ]
 
     seen = {}
+    seen_issue = {}
+    issue_min = props["source_issue"]["minimum"]
     for lineno, row in rows:
         def err(msg, _n=lineno):
             errors.append(f"line {_n}: {msg}")
@@ -136,6 +139,15 @@ def validate(header, rows, schema, today=None):
                     if date > today:
                         err(f"submitted_date {date} is in the future")
 
+        if rec["source_issue"]:
+            issue = _int_or_none(rec["source_issue"])
+            if issue is None or issue < issue_min:
+                err(f"source_issue '{rec['source_issue']}' must be a positive issue number or empty")
+            elif issue in seen_issue:
+                err(f"source_issue #{issue} is already transcribed on line {seen_issue[issue]}")
+            else:
+                seen_issue[issue] = lineno
+
         key = tuple(rec[c] for c in cols)
         if key in seen:
             err(f"exact duplicate of line {seen[key]}")
@@ -176,6 +188,7 @@ def self_test(schema):
             "fps_cap_changes_it": "true",
             "notes": "Zings in uncapped menus, quiet with a 120 fps cap.",
             "submitted_date": "2026-08-12",
+            "source_issue": "",
         }
         base.update(overrides)
         return [base[c] for c in cols]
@@ -217,7 +230,15 @@ def self_test(schema):
     check("future date", [(2, make(submitted_date="2027-01-01"))], ["in the future"])
     check("missing required brand", [(2, make(brand=""))], ["required field 'brand' is empty"])
     check("exact duplicate rows", [(2, make()), (3, make())], ["exact duplicate of line 2"])
-    check("wrong column count", [(2, make()[:-1])], ["expected 11 columns"])
+    check("wrong column count", [(2, make()[:-1])], [f"expected {len(cols)} columns"])
+    check("valid source_issue passes", [(2, make(source_issue="12"))], [])
+    check("source_issue not a number", [(2, make(source_issue="#12"))],
+          ["must be a positive issue number or empty"])
+    check("source_issue zero", [(2, make(source_issue="0"))],
+          ["must be a positive issue number or empty"])
+    check("one issue transcribed into two rows",
+          [(2, make(source_issue="12")), (3, make(source_issue="12", severity="2"))],
+          ["source_issue #12 is already transcribed on line 2"])
 
     bad_header = list(cols)
     bad_header[0] = "part_type"

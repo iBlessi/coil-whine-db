@@ -1,2 +1,43 @@
-component_type,brand,model,exact_sku,purchase_year,severity,load_context,psu_used,fps_cap_changes_it,notes,submitted_date
-gpu,ASUS,ROG Astral RTX 5080 OC,,2026,1,menu-uncapped-fps,EVGA SuperNOVA 1000 GT,true,Quiet card overall: silent in gaming and idle. A faint electronic whine appears only in uncapped game menus; any frame cap removes it. Ear at the case panel. Same unit as the TechFuelHQ Astral 5080 bench dataset.,2026-08-13
+component_type,brand,model,exact_sku,purchase_year,severity,load_context,psu_used,fps_cap_changes_it,notes,submitted_date,source_issue
+gpu,ASUS,ROG Astral RTX 5080 OC,,2026,1,menu-uncapped-fps,EVGA SuperNOVA 1000 GT,true,Quiet card overall: silent in gaming and idle. A faint electronic whine appears only in uncapped game menus; any frame cap removes it. Ear at the case panel. Same unit as the TechFuelHQ Astral 5080 bench dataset.,2026-08-13,1
+gpu,NVIDIA,RTX 5090 Founders Edition,,2025,2,menu-uncapped-fps,ASRock Phantom Gaming PG-1300G,,It sounds like a quiet dot matrix printer when the local llm is typing a response.,2026-09-01,3
+gpu,ASRock,RX 7900 XTX Taichi,,2023,4,idle,Corsair RM850e,false,"Nothing quietened it, it was a constant buzzing that changed depending on what was on screen. It performs great so I just learned to live with it.",2026-09-01,4
+gpu,Sapphire,PULSE RX 9060 XT 16GB,,2025,3,gaming,Corsair SF650,false,It is silent at idle but under load it is very loud and the buzzing whine changes depending on the content of the screen,2026-09-01,5
+gpu,EVGA,GTX 1070 SC,,2016,0,gaming,EVGA Supernova 650,false,"Completely silent, even when under load",2026-09-01,6
+psu,Corsair,AX1600i,CP-9020087-EU,2020,0,furmark,,false,,2026-09-01,7
+gpu,ZOTAC,RTX 5080 AMP Extreme Infinity,ZT-B50800B-10P,2025,2,menu-uncapped-fps,Corsair AX1600i,true,,2026-09-01,8
+gpu,Gigabyte,RX 9070 XT GAMING OC,GV-R9070XTGAMING OC-16GD,2025,3,gaming,Cooler Master V850 SFX,true,"Only thing that really quiets it is an FPS cap, or a power limit in the Radeon settings.",2026-09-02,10
+gpu,Sapphire,NITRO+ RX 6700 XT,,2022,2,gaming,Corsair RM650,,The card was 12 months old when I bought it second hand. It has had the same coil whine the whole time I've owned it. It's audible over fan noise from under my desk with most games. It's not audible when I use headphones.,2026-09-02,12
+gpu,ZOTAC,RTX 2070 SUPER Twin Fan,,2019,2,gaming,Corsair VS550,,,2026-09-02,13
+gpu,XFX,RX 6950 XT Speedster MERC 319,,2023,0,gaming,,false,,2026-09-02,14
+gpu,ASUS,ROG Astral RTX 5090 OC,ROG-ASTRAL-RTX5090-O32G-GAMING,2025,2,gaming,NZXT C1500 Platinum,,The GPU is on a custom water loop. Whines under local llm load as well.,2026-09-02,15
+gpu,ASUS,TUF Gaming RX 7900 XT OC,TUF-RX7900XT-O20G-GAMING,2023,3,gaming,EVGA SuperNOVA 750 P2,,,2026-09-02,18
+psu,Gigabyte,P1000GM,,2023,4,idle,,,Actual whine. Disappeared under load. Returned when idle again.,2026-09-02,19
+gpu,Gigabyte,RTX 5070 Ti AERO OC 16G,,2026,4,idle,Corsair RM 750e,false,,2026-09-02,20
+gpu,Sapphire,NITRO+ RX 9070 XT,,2025,2,gaming,Corsair rm850x,true,,2026-09-03,21
+gpu,Gigabyte,RX 7700 XT GAMING OC 12G,,2023,0,furmark,,false,,2026-09-03,22
+gpu,ASUS,Dual RTX 2070 EVO,,2020,4,gaming,,true,Spouses pc,2026-09-03,23
+gpu,ASUS,PRIME RTX 5070 Ti,,2025,0,gaming,Phanteks AMP GH 1200w,,,2026-09-03,25
+gpu,ASUS,ROG Strix GTX 1080 Ti OC,ROG-STRIX-GTX1080TI-O11G-GAMING,2017,2,gaming,be quiet! Pure Power 13 M 1000w (also coilwhine with other PSU in the same system..),false,,2026-09-03,26
+gpu,PNY,RTX 5070 Ti Overclocked,VCG5070T16TFXPB1-O,2026,4,idle,Apevia ATX-PR1000W,false,It whines loud from any movement on the screen. It whines from just moving the mouse around the screen. Loudest coil whine graphics card I've ever owned.,2026-09-04,27
+gpu,XFX,RX 6950 XT Speedster MERC 319,RX-695XATBD9,2023,2,gaming,Corsair HX1000i,true,,2026-09-04,28
+gpu,INNO3D,iChill X3 RTX 4090,,2023,0,gaming,Rm1000x,false,,2026-09-04,29
+gpu,Palit,RTX 5080 GamingPro OC,NE75080019T2-GB2031A,2026,3,gaming,1STPLAYER NGDP Gold 1000W [HA-1000BA4],true,take this boolshit in 8 august 2026 too much annoying noise hope my shop will replace this GPU,2026-09-04,30
+psu,Gigabyte,AORUS P850W,,2022,0,gaming,,false,,2026-09-04,31
+gpu,XFX,RX 7900 XT (AMD reference design),RX-79TMBABF9,2023,2,gaming,Seasonic Focus GX-850,true,"Reference GPU, full custom loop PC. PC at 50cm from my ears, so no difference between severity 1 and 2. I play at framecapped 120hz, and whines a tiny bit at full looad. Uncapped FPS is louder.",2026-09-05,32
+gpu,MSI,RTX 4070 Ti SUPER VENTUS 3X OC,,2025,3,gaming,Cooler master V SFX GOLD 850 ATX 3.1,false,,2026-09-05,33
+gpu,ASRock,RX 9060 XT Steel Legend 16GB OC,,2026,2,gaming,Seasonic 650 Watt Focus PX Modular 80+ Platinum,,,2026-09-07,34
+psu,Seasonic,FOCUS PX-650,,2021,0,gaming,,,,2026-09-07,35
+gpu,XFX,RX 6600 XT Speedster MERC 308,,2024,3,gaming,Seasonic CORE GX 750W,true,"Dualboot ""lounge gaming"" box, coil wine applies while on both windows 10 and linux (bazzite).",2026-09-07,36
+gpu,PNY,RTX 4070 SUPER 12GB Triple Fan OC,VCG4070S12TFXXPB1,2024,2,furmark,Seasonic Focus GX 750W ATX 2.4,true,"Only on very GPU-heavy (near 100% power usage) tasks like benchmarks, Minecraft with shaders like Complementary or Photon set to Highest preset or in ComfyUI.",2026-09-09,38
+psu,Delta Electronics,DPS-300AB-3A,,2010,1,idle,,,"Sometimes makes coil while when the PC is powered off but still plugged in, when first plugged in. Normalizes under use. Faint noise with an ear to the case.",2026-09-09,39
+gpu,Sapphire,NITRO+ RX 7900 XTX Vapor-X 24GB,11322-01-40G,2023,2,gaming,Seasonic PRIME TX 1300W 80 PLUS Titanium,true,I have tested this GPU with 4 different Corsair PSU and in another PC. Coil whine was about the same. It only reduced a bit when I moved to the Seasonic PSU.,2026-09-09,40
+gpu,HP,RTX 3080 10GB (OMEN 40L prebuilt),,2022,0,furmark,Cooler master 800w (upgraded to Corsair rm1000e q4 2025),false,,2026-09-09,41
+gpu,Sapphire,NITRO+ RX 9070 XT,11348-01-20G,2025,2,gaming,CORSAIR HX1500i,true,"Worst in the first few months: modern games were loud enough that I moved the PC to the floor. Better now, but uncapped games (Yu-Gi-Oh! Master Duel at 300-500 fps) cause an electrical rattle I hear through headphones. At 120 fps or below it is minor.",2026-09-09,42
+gpu,ASUS,PRIME RX 9070 XT,,2026,2,menu-uncapped-fps,Corsair HX750,,,2026-09-09,43
+gpu,PowerColor,Red Devil RX 9070 XT,RX9070XT 16G-E/OC,2026,2,gaming,be quiet! Dark Power 14 850W,,,2026-09-10,44
+psu,be quiet!,Dark Power 14 850W (ATX 3.1),BP019US,2026,0,gaming,,,,2026-09-10,45
+gpu,PowerColor,Red Devil RX 6950 XT,,2025,3,gaming,BeQuiet Powerzone 2 850W,false,"I have to wear my headphones to not be bothered by it. It starts at a power draw of 270W upwards and is on a game basis. Most 3D games do, 2D mostly not. Seems to be linked to either FSR or Raytracing.",2026-09-10,46
+gpu,Lenovo,Legion Pro 5 16IRX9 (RTX 4060 Laptop GPU),,2026,2,gaming,laptop (internal PSU),,"Legion Pro 5 16IRX9 laptop dGPU (outlet, 2023 production), hybrid graphics. High-pitch whine at onset of heavy compute load (local LLM inference, Qwen ~37B via FreeToken), audible while fans still ramping; quiets once fans reach full speed. Cannot isolate card from chassis.",2026-09-10,47
+gpu,ASUS,PRIME RX 9070,,2026,2,menu-uncapped-fps,be quiet! Pure Power 13 M 1000W,true,,2026-09-12,49
+gpu,Gigabyte,RX 7800 XT GAMING OC 16G,GV-R78XTGAMING OC-16GD,2024,2,gaming,Seasonic FOCUS GX-850W (ATX 3),true,"Fans usually overpower it in games such as Fortnite but its still noticeable sitting on my desk, although quite minor most of the time. The sound it makes is a low buzzing type noise and FPS greatly affects the sound. I think i remember it being a bit worse when the card was new.",2026-09-13,51

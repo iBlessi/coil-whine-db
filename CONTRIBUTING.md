@@ -15,11 +15,12 @@ than reality.
    [`schema.json`](schema.json) and the CSV column order exactly:
 
    ```
-   component_type,brand,model,exact_sku,purchase_year,severity,load_context,psu_used,fps_cap_changes_it,notes,submitted_date
+   component_type,brand,model,exact_sku,purchase_year,severity,load_context,psu_used,fps_cap_changes_it,notes,submitted_date,source_issue
    ```
 
    Optional fields (`exact_sku`, `psu_used`, `fps_cap_changes_it`, `notes`) stay as empty
-   strings when you have nothing to put in them. Run the validator before opening the PR:
+   strings when you have nothing to put in them. Leave `source_issue` empty on a PR; it holds the
+   issue number for rows transcribed from the issue form. Run the validator before opening the PR:
 
    ```bash
    python scripts/validate_submissions.py
@@ -45,7 +46,8 @@ Every submission — issue or PR — goes through the same two layers before it 
 **1. Mechanical schema check.** `scripts/validate_submissions.py` must pass: column order,
 enums (`component_type`, `load_context`), `severity` an integer 0–4, `purchase_year` a real
 non-future year, `notes` within 280 characters, `submitted_date` a real non-future ISO date,
-no exact-duplicate rows, and no severity-0 + `fps_cap_changes_it=true` contradiction (an
+no exact-duplicate rows, no `source_issue` on two rows, and no severity-0 +
+`fps_cap_changes_it=true` contradiction (an
 inaudible whine cannot audibly change). CI runs this on every PR that touches the dataset;
 a failing check blocks the merge.
 
@@ -68,6 +70,13 @@ rejected or held:
 A maintainer may ask one clarifying question on a borderline report; unanswered borderline
 reports are closed without merging, and can be resubmitted.
 
+**How an accepted issue becomes a row.** The maintainer copies the form fields, sets
+`submitted_date` to the issue's creation date (UTC) and `source_issue` to its number. `notes` and
+`psu_used` are copied verbatim; notes over 280 characters are condensed. `model` loses a repeated
+brand name and obvious typos so units of one board design group together, and `exact_sku` holds
+only a manufacturer SKU, never a retail listing title. The reply on the issue shows how the row was
+recorded, so the submitter can correct it.
+
 **3. Corrections.** A correction to an existing row (you exchanged the unit, the whine faded,
 you mis-scored it) is treated exactly like a submission: open an issue or PR pointing at the
 row, and the change goes through the same checks. Resubmitting the same unit updates its row
@@ -77,8 +86,9 @@ rather than adding a second one.
 
 The census page at <https://techfuelhq.com/data/coil-whine-database/> publishes **per-model
 n + severity distribution once a model has >=5 reports** — the activation floor. Below the
-floor a model is listed as *collecting*, with no verdict. Published percentages are described
-as ceilings, because annoyed owners over-report and silent units under-report.
+floor a model is listed as *collecting*, with its report count and no severity breakdown or
+verdict. Reports are self-selected and the size and direction of that bias are not measured, so
+published percentages are neither population estimates nor guaranteed upper bounds.
 
 ## License
 

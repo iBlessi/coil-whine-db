@@ -19,17 +19,25 @@ whine?", and neither can this dataset.
 So this dataset never publishes a per-model verdict. It publishes per-model **distributions**:
 how many units were reported (`n`) and what share of them landed at each severity level. The
 activation floor: **per-model n + severity distribution once a model has >=5 reports.** Below
-that floor a model is listed as *collecting*, with no numbers attached.
+that floor a model is listed as *collecting*, with its report count and no severity breakdown.
 
-One bias is named up front rather than hidden: annoyed owners over-report and silent units
-under-report, so any published whine percentage is a **ceiling**, not an unbiased estimate.
+One limit is named up front: reports are self-selected. Annoyed owners may be more likely to
+submit, but the size and direction of that bias are not measured, so a published whine percentage
+is neither a population estimate nor a guaranteed upper bound.
 
-## Status: v0.1.0 — the census opens empty
+## Status: v0.2.0 (2026-09-14)
 
-`data/submissions.csv` currently holds **0 rows** — a header and nothing else, on purpose.
-A census of unit-to-unit variance cannot be seeded from published reviews, because each review
-describes a single unit that is not ours to report. Every row in this dataset will be a real
-owner reporting a real unit, starting with submission #1.
+As of 2026-09-14, `data/submissions.csv` holds **42 rows**: 36 GPU reports and 6 power supply
+reports across 40 models. Each row was transcribed from an issue-form report and names that issue
+in its `source_issue` column. No model has reached the 5-report floor, so every model is still
+*collecting*.
+
+The count above is dated because every accepted report changes it; the validator prints the live
+count (`python scripts/validate_submissions.py`).
+
+The census opened on 2026-08-12 with 0 rows on purpose. A census of unit-to-unit variance cannot
+be seeded from published reviews, because each review describes a single unit that is not ours to
+report. Every row is a real owner reporting a real unit.
 
 Severity-0 reports ("mine is silent") are the most valuable rows in the dataset — they are the
 half of the distribution that never shows up in forum threads.
@@ -72,6 +80,14 @@ python scripts/validate_submissions.py --self-test   # prove the checker catches
 ```
 
 The same check runs in CI on every pull request that touches the dataset.
+
+## Changelog
+
+- **0.2.0 (2026-09-14)**: optional `source_issue` column, the GitHub issue a row was transcribed
+  from; the validator rejects an issue number that appears on two rows. Reports from issues #2-#51
+  triaged: 41 transcribed, 8 need one more detail from the submitter, 1 duplicate.
+- **0.1.1 (2026-08-13)**: first accepted report (issue #1).
+- **0.1.0 (2026-08-12)**: schema, anchored severity scale, issue-form and PR intake, validator; 0 rows.
 
 ## License
 
