@@ -25,10 +25,10 @@ One limit is named up front: reports are self-selected. Annoyed owners may be mo
 submit, but the size and direction of that bias are not measured, so a published whine percentage
 is neither a population estimate nor a guaranteed upper bound.
 
-## Status: v0.2.0 (2026-09-14)
+## Status: v0.2.1 (2026-09-15)
 
-As of 2026-09-14, `data/submissions.csv` holds **42 rows**: 36 GPU reports and 6 power supply
-reports across 40 models. Each row was transcribed from an issue-form report and names that issue
+As of 2026-09-15, `data/submissions.csv` holds **44 rows**: 38 GPU reports and 6 power supply
+reports across 42 models. Each row was transcribed from an issue-form report and names that issue
 in its `source_issue` column. No model has reached the 5-report floor, so every model is still
 *collecting*.
 
@@ -83,6 +83,9 @@ The same check runs in CI on every pull request that touches the dataset.
 
 ## Changelog
 
+- **0.2.1 (2026-09-15)**: issues #48 and #50 transcribed after their submitters answered the
+  clarifying question (#48 at severity 3 under uncapped FPS, #50 at severity 2 while gaming). Six
+  reports from #2-#51 still wait on an answer.
 - **0.2.0 (2026-09-14)**: optional `source_issue` column, the GitHub issue a row was transcribed
   from; the validator rejects an issue number that appears on two rows. Reports from issues #2-#51
   triaged: 41 transcribed, 8 need one more detail from the submitter, 1 duplicate.
