@@ -7,6 +7,7 @@ gpu,EVGA,GTX 1070 SC,,2016,0,gaming,EVGA Supernova 650,false,"Completely silent,
 psu,Corsair,AX1600i,CP-9020087-EU,2020,0,furmark,,false,,2026-09-01,7
 gpu,ZOTAC,RTX 5080 AMP Extreme Infinity,ZT-B50800B-10P,2025,2,menu-uncapped-fps,Corsair AX1600i,true,,2026-09-01,8
 gpu,Gigabyte,RX 9070 XT GAMING OC,GV-R9070XTGAMING OC-16GD,2025,3,gaming,Cooler Master V850 SFX,true,"Only thing that really quiets it is an FPS cap, or a power limit in the Radeon settings.",2026-09-02,10
+psu,Corsair,SF450,,2020,0,idle,,,,2026-09-02,11
 gpu,Sapphire,NITRO+ RX 6700 XT,,2022,2,gaming,Corsair RM650,,The card was 12 months old when I bought it second hand. It has had the same coil whine the whole time I've owned it. It's audible over fan noise from under my desk with most games. It's not audible when I use headphones.,2026-09-02,12
 gpu,ZOTAC,RTX 2070 SUPER Twin Fan,,2019,2,gaming,Corsair VS550,,,2026-09-02,13
 gpu,XFX,RX 6950 XT Speedster MERC 319,,2023,0,gaming,,false,,2026-09-02,14
@@ -17,6 +18,7 @@ gpu,Gigabyte,RTX 5070 Ti AERO OC 16G,,2026,4,idle,Corsair RM 750e,false,,2026-09
 gpu,Sapphire,NITRO+ RX 9070 XT,,2025,2,gaming,Corsair rm850x,true,,2026-09-03,21
 gpu,Gigabyte,RX 7700 XT GAMING OC 12G,,2023,0,furmark,,false,,2026-09-03,22
 gpu,ASUS,Dual RTX 2070 EVO,,2020,4,gaming,,true,Spouses pc,2026-09-03,23
+gpu,XFX,RX 6950 XT Speedster MERC 319,RX-695XATBD9,2023,3,menu-uncapped-fps,Corsair rm1000x,,Nothing quieted it. It only appears in some games menus. But I game with headphones so don't register changes in the whining over time,2026-09-03,24
 gpu,ASUS,PRIME RTX 5070 Ti,,2025,0,gaming,Phanteks AMP GH 1200w,,,2026-09-03,25
 gpu,ASUS,ROG Strix GTX 1080 Ti OC,ROG-STRIX-GTX1080TI-O11G-GAMING,2017,2,gaming,be quiet! Pure Power 13 M 1000w (also coilwhine with other PSU in the same system..),false,,2026-09-03,26
 gpu,PNY,RTX 5070 Ti Overclocked,VCG5070T16TFXPB1-O,2026,4,idle,Apevia ATX-PR1000W,false,It whines loud from any movement on the screen. It whines from just moving the mouse around the screen. Loudest coil whine graphics card I've ever owned.,2026-09-04,27
@@ -43,3 +45,4 @@ gpu,ASUS,Dual RX 9060 XT,,2026,3,menu-uncapped-fps,,true,"Severity 0-1 in regula
 gpu,ASUS,PRIME RX 9070,,2026,2,menu-uncapped-fps,be quiet! Pure Power 13 M 1000W,true,,2026-09-12,49
 gpu,Sapphire,NITRO+ RX 7900 XT,,2024,2,gaming,Corsair HX1000 | Seasonic Prime GX750 (from 2019),false,,2026-09-12,50
 gpu,Gigabyte,RX 7800 XT GAMING OC 16G,GV-R78XTGAMING OC-16GD,2024,2,gaming,Seasonic FOCUS GX-850W (ATX 3),true,"Fans usually overpower it in games such as Fortnite but its still noticeable sitting on my desk, although quite minor most of the time. The sound it makes is a low buzzing type noise and FPS greatly affects the sound. I think i remember it being a bit worse when the card was new.",2026-09-13,51
+gpu,Gigabyte,RX 7600 GAMING OC 8G,,2026,2,menu-uncapped-fps,Corsair CX750,,"I first realized this was happening while in the cs2 menu. I can hear it when the gpu is under heavy load like a benchmark or that kind of menu but i have my pc on my desk, if it was under it i wouldn't really notice it as much. I think the pitch is now lower, but I am not sure.",2026-09-23,52

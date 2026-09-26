@@ -25,10 +25,10 @@ One limit is named up front: reports are self-selected. Annoyed owners may be mo
 submit, but the size and direction of that bias are not measured, so a published whine percentage
 is neither a population estimate nor a guaranteed upper bound.
 
-## Status: v0.2.1 (2026-09-15)
+## Status: v0.2.2 (2026-09-26)
 
-As of 2026-09-15, `data/submissions.csv` holds **44 rows**: 38 GPU reports and 6 power supply
-reports across 42 models. Each row was transcribed from an issue-form report and names that issue
+As of 2026-09-26, `data/submissions.csv` holds **47 rows**: 40 GPU reports and 7 power supply
+reports across 44 models. Each row was transcribed from an issue-form report and names that issue
 in its `source_issue` column. No model has reached the 5-report floor, so every model is still
 *collecting*.
 
@@ -83,6 +83,11 @@ The same check runs in CI on every pull request that touches the dataset.
 
 ## Changelog
 
+- **0.2.2 (2026-09-26)**: issues #11 and #24 transcribed after their submitters answered the
+  clarifying question (#11 corrected to a Corsair SF450 at severity 0, #24 at severity 3 as the third
+  XFX MERC 319), and the new report #52 (Gigabyte RX 7600 GAMING OC 8G, severity 2). #37's answer
+  names two Sapphire RX 6800 lines and waits on one more detail; #2, #16 and #17 still wait on an
+  answer.
 - **0.2.1 (2026-09-15)**: issues #48 and #50 transcribed after their submitters answered the
   clarifying question (#48 at severity 3 under uncapped FPS, #50 at severity 2 while gaming). Six
   reports from #2-#51 still wait on an answer.
