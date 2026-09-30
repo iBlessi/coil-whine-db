@@ -20,6 +20,9 @@ So this dataset never publishes a per-model verdict. It publishes per-model **di
 how many units were reported (`n`) and what share of them landed at each severity level. The
 activation floor: **per-model n + severity distribution once a model has >=5 reports.** Below
 that floor a model is listed as *collecting*, with its report count and no severity breakdown.
+Since 2026-09-30 the census page also groups the graphics-card reports by GPU name across boards,
+under the same floor. A GPU group mixes boards, so it is a weaker statement than a model's own
+distribution and never replaces it.
 
 One limit is named up front: reports are self-selected. Annoyed owners may be more likely to
 submit, but the size and direction of that bias are not measured, so a published whine percentage

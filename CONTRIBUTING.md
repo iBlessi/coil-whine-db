@@ -88,7 +88,9 @@ The census page at <https://techfuelhq.com/data/coil-whine-database/> publishes 
 n + severity distribution once a model has >=5 reports** — the activation floor. Below the
 floor a model is listed as *collecting*, with its report count and no severity breakdown or
 verdict. Reports are self-selected and the size and direction of that bias are not measured, so
-published percentages are neither population estimates nor guaranteed upper bounds.
+published percentages are neither population estimates nor guaranteed upper bounds. Since 2026-09-30
+the page also groups graphics-card reports by GPU name across boards, under the same floor; a GPU
+group mixes boards, so it is a weaker statement than a model's own distribution and never replaces it.
 
 ## License
 
