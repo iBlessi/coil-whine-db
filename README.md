@@ -38,6 +38,11 @@ in its `source_issue` column. No model has reached the 5-report floor, so every 
 The count above is dated because every accepted report changes it; the validator prints the live
 count (`python scripts/validate_submissions.py`).
 
+As of 2026-09-30 no report waits on a clarifying answer, and none of the four held at v0.2.2
+added a row. #37 was closed on 2026-09-29: its receipt names two different Sapphire RX 6800
+boards and the card is gone, so it cannot be grouped. #2, #16 and #17 were closed on 2026-09-30
+after two weeks without an answer. Each goes back in the queue if its submitter answers.
+
 The census opened on 2026-08-12 with 0 rows on purpose. A census of unit-to-unit variance cannot
 be seeded from published reviews, because each review describes a single unit that is not ours to
 report. Every row is a real owner reporting a real unit.
